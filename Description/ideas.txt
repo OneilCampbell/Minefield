@@ -1,0 +1,9 @@
+make game endless(going offscreen makes it change to a new grid layout)
+make the game responsive(grid is redrawn based on screen size but still endless)
+add enemies(things that move around the screen and have to be avoided or else you lose a life)
+maybe even have hidden enemies that are only revealed once you reach a certain vicinity
+add friends(things that are stationary on a green square and offer extra lives, points, map reveals, etc.)
+make grid change color based whenever you go offscreen, to indicate a new grid
+keep track of previous grid/game states so when you return to grid, it is same as you left it(2d array)
+or instead of making the grid endless, have finite gameboard and hardcode states with dynamic updates, so grid states are preserved.
+maybe add audio to indicate when nearing landmines, without giving away the exact location

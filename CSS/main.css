@@ -1,0 +1,38 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+
+body{
+	background:skyblue;
+}
+
+#gameBoard{
+	height:800px;
+	width:800px;
+	background:skyblue;
+	position: relative;
+	margin:0 auto;
+}
+
+.gridSquare{
+	height:50px;
+	width:50px;
+	position: absolute;
+	border:solid 1px black;
+}
+
+#character{
+	height:50px;
+	width:50px;
+	position: absolute;
+	z-index: 999;
+	background:url('../Images/Sackboy.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.bomb{
+
+}
