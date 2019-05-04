@@ -37,7 +37,7 @@ const drawGrid = () => {
 
 const populateGrid = () => {
 	for(let x = 0; x < 16; x++){
-		for(let y = 0; y < 16; y++){
+		for(let y = 0; y < 8; y++){
 
 			let div = document.createElement('div');
 			div.classList.add('gridSquare');
@@ -55,16 +55,16 @@ populateGrid();
 let bombArray = [];
 
 //function to randomly populate "bombs" on the game grid
-//grid is 16 X 16, so 256 possible positions
-//ideally want to choose between 100-150 bombs to be placed on the grid
+//grid is 16 X 8, so 128 possible positions
+//ideally want to choose between 20-40 bombs to be placed on the grid
 const createBombs = () => {
-	let amountOfBombs = Math.floor(Math.random()*51)+15;
+	let amountOfBombs = Math.floor(Math.random()*20)+12;
 
 	while(bombArray.length < amountOfBombs){
 
 		let randIndex = Math.floor(Math.random() * gridArray.length);
 
-		while(bombArray.includes(randIndex) || [0,1,16,17].includes(randIndex)){
+		while(bombArray.includes(randIndex) || [0,1,8,9].includes(randIndex)){
 			randIndex = Math.floor(Math.random() * gridArray.length);
 		}
 
@@ -93,7 +93,7 @@ const checkCollision = () => {
 const moveLeft = () => {
 	if(characterPosition.x >= 1){
 		characterPosition.x--;
-		currentSquareIndex -= 16;
+		currentSquareIndex -= 8;
 	}
 }
 
@@ -107,12 +107,12 @@ const moveUp = () => {
 const moveRight = () => {
 	if(characterPosition.x <= 14){
 		characterPosition.x++;
-		currentSquareIndex += 16;
+		currentSquareIndex += 8;
 	}
 }
 
 const moveDown = () => {
-	if(characterPosition.y <= 14){
+	if(characterPosition.y <= 6){
 		characterPosition.y++;
 		currentSquareIndex += 1;
 	}
